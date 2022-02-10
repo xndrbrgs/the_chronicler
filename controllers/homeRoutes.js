@@ -3,11 +3,15 @@ const { Book, User } = require('../models');
 // TODO: add models
 // const withAuth = require("../utils/auth");
 
+router.get('/', async (req, res) => {
+	res.render('landingpage', { layout: 'landing.handlebars' });
+});
+
 // render login page
 router.get('/login', async (req, res) => {
 	// If the user is already logged in, redirect the request to another route
 	if (req.session.logged_in) {
-		res.redirect('/');
+		res.redirect('/home');
 		return;
 	}
 
@@ -20,7 +24,7 @@ router.get('/signup', async (req, res) => {
 });
 
 // render home page
-router.get('/', async (req, res) => {
+router.get('/home', async (req, res) => {
 	try {
 		// Get all projects and JOIN with user data
 		const booktData = await Book.findAll({

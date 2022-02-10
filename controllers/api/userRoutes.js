@@ -3,6 +3,22 @@ const { User } = require('../../models');
 
 // * /api/user
 
+// ? TESTING
+// ? Get all users
+router.get('/', async (req, res) => {
+	try {
+		// Get all projects and JOIN with user data
+		const userData = await User.findAll();
+
+		// Serialize data so the template can read it
+		const users = userData.map((user) => user.get({ plain: true }));
+
+		res.status(200).json(users);
+	} catch (err) {
+		res.status(500).json(err);
+	}
+});
+
 // Create new user
 router.post('/', async (req, res) => {
 	try {

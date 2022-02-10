@@ -1,0 +1,72 @@
+[
+	{
+		"title": "Harry Potter and the Sorcerer's Stone",
+		"description": "Harry Potter's life is miserable. His parents are dead and he's stuck with his heartless relatives, who force him to live in a tiny closet under the stairs. But his fortune changes when he receives a letter that tells him the truth about himself: he's a wizard. A mysterious visitor rescues him from his relatives and takes him to his new home, Hogwarts School of Witchcraft and Wizardry.",
+		"author": "J.K. Rowling",
+		"genre": "fantasy",
+		"image_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1474154022l/3._SY475_.jpg",
+		"pages": "309",
+		"goodreads_rating": "4.48",
+		"user_id": 1
+	},
+	{
+		"title": "Pride and Prejudice",
+		"description": "Since its immediate success in 1813, Pride and Prejudice has remained one of the most popular novels in the English language. Jane Austen called this brilliant work \"her own darling child\" and its vivacious heroine, Elizabeth Bennet, \"as delightful a creature as ever appeared in print.\" The romantic clash between the opinionated Elizabeth and her proud beau, Mr. Darcy, is a splendid performance of civilized sparring. And Jane Austen's radiant wit sparkles as her characters dance a delicate quadrille of flirtation and intrigue, making this book the most superb comedy of manners of Regency England.",
+		"author": "Jane Austen",
+		"genre": "romance",
+		"image_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1320399351l/1885.jpg",
+		"pages": "279",
+		"goodreads_rating": "4.28",
+		"user_id": 2
+	},
+	{
+		"title": "The Hobbit, or There and Back Again",
+		"description": "In a hole in the ground there lived a hobbit. Not a nasty, dirty, wet hole, filled with the ends of worms and an oozy smell, nor yet a dry, bare, sandy hole with nothing in it to sit down on or to eat: it was a hobbit-hole, and that means comfort.",
+		"author": "J.R.R. Tolkien",
+		"genre": "fantasy",
+		"image_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1546071216l/5907.jpg",
+		"pages": "366",
+		"goodreads_rating": "4.28",
+		"user_id": 2
+	},
+	{
+		"title": "To Kill a Mockingbird",
+		"description": "The unforgettable novel of a childhood in a sleepy Southern town and the crisis of conscience that rocked it. \"To Kill A Mockingbird\" became both an instant bestseller and a critical success when it was first published in 1960. It went on to win the Pulitzer Prize in 1961 and was later made into an Academy Award-winning film, also a classic.",
+		"author": "Harper Lee",
+		"genre": "historical fiction",
+		"image_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1553383690l/2657.jpg",
+		"pages": "336",
+		"goodreads_rating": "4.27",
+		"user_id": 3
+	},
+	{
+		"title": "The Lion, the Witch and the Wardrobe",
+		"description": "Narnia… the land beyond the wardrobe door, a secret place frozen in eternal winter, a magical country waiting to be set free. \b Lucy is the first to find the secret of the wardrobe in the professor's mysterious old house. At first her brothers and sister don't believe her when she tells of her visit to the land of Narnia. But soon Edmund, then Peter and Susan step through the wardrobe themselves. In Narnia they find a country buried under the evil enchantment of the White Witch. When they meet the Lion Aslan, they realize they've been called to a great adventure and bravely join the battle to free Narnia from the Witch's sinister spell.",
+		"author": "C.S. Lewis",
+		"genre": "fantasy",
+		"image_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1353029077l/100915.jpg",
+		"pages": "206",
+		"goodreads_rating": "4.23",
+		"user_id": 4
+	},
+	{
+		"title": "1984",
+		"description": "Among the seminal texts of the 20th century, Nineteen Eighty-Four is a rare work that grows more haunting as its futuristic purgatory becomes more real. Published in 1949, the book offers political satirist George Orwell's nightmarish vision of a totalitarian, bureaucratic world and one poor stiff's attempt to find individuality. The brilliance of the novel is Orwell's prescience of modern life—the ubiquity of television, the distortion of the language—and his ability to construct such a thorough version of hell. Required reading for students since it was published, it ranks among the most terrifying novels ever written.",
+		"author": "George Orwell",
+		"genre": "science fiction",
+		"image_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1532714506l/40961427._SX318_.jpg",
+		"pages": "298",
+		"goodreads_rating": "4.19",
+		"user_id": 6
+	},
+	{
+		"title": "The Giver",
+		"description": "The Giver, the 1994 Newbery Medal winner, has become one of the most influential novels of our time. The haunting story centers on twelve-year-old Jonas, who lives in a seemingly ideal, if colorless, world of conformity and contentment. Not until he is given his life assignment as the Receiver of Memory does he begin to understand the dark, complex secrets behind his fragile community. This movie tie-in edition features cover art from the movie and exclusive Q&A with members of the cast, including Taylor Swift, Brenton Thwaites and Cameron Monaghan.",
+		"author": "Lois Lowry",
+		"genre": "fiction",
+		"image_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1342493368l/3636.jpg",
+		"pages": "208",
+		"goodreads_rating": "4.13",
+		"user_id": 7
+	}
+]

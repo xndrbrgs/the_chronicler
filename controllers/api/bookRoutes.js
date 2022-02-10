@@ -1,8 +1,27 @@
 const router = require('express').Router();
-const { Collection, Book } = require('../../models');
+const { Collection, Book, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // * /api/book
+
+// Get all saved books
+router.get('/', async (req, res) => {
+	try {
+		const bookData = await Book.findAll({
+			include: [
+				{
+					model: User,
+				},
+			],
+		});
+
+		const books = bookData.map((book) => book.get({ plain: true }));
+
+		res.status(200).json(books);
+	} catch (err) {
+		res.status(500).json(err);
+	}
+});
 
 // Add book to collection
 router.post('/', withAuth, async (req, res) => {

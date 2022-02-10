@@ -16,7 +16,7 @@ Book.init(
 			allowNull: false,
 		},
 		description: {
-			type: DataTypes.STRING,
+			type: DataTypes.TEXT,
 		},
 		author: {
 			type: DataTypes.STRING,
@@ -49,3 +49,5 @@ Book.init(
 		modelName: 'book',
 	}
 );
+
+module.exports = Book;

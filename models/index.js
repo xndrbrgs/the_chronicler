@@ -1,13 +1,15 @@
 const User = require('./User');
 const Book = require('./Book');
 
-// TODO: look through activities to allow books to belong to many users
-User.hasMany(Book, {
-	foreignKey: 'user_id',
-});
+// User.hasMany(Book, {
+// 	foreignKey: 'user_id',
+// });
 
-Book.belongsTo(User, {
-	foreignKey: 'user_id',
-});
+// Book.belongsTo(User, {
+// 	foreignKey: 'user_id',
+// });
+
+User.belongsToMany(Book, { through: 'User-Books' });
+Book.belongsToMany(User, { through: 'User-Books' });
 
 module.exports = { User, Book };

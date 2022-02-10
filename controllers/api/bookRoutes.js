@@ -23,6 +23,27 @@ router.get('/', async (req, res) => {
 	}
 });
 
+// Get all saved books
+router.get('/library', async (req, res) => {
+	try {
+		const bookData = await Library.findAll({
+			include: [
+				{
+					model: User,
+				},
+			],
+		});
+
+		const books = bookData.map((book) => book.get({ plain: true }));
+
+		res.status(200).json(books);
+	} catch (err) {
+		res.status(500).json(err);
+	}
+});
+
+// TODO: Get book by id
+
 // Add book to collection
 router.post('/', withAuth, async (req, res) => {
 	try {

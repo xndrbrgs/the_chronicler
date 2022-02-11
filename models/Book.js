@@ -13,16 +13,31 @@ Book.init(
 			type: DataTypes.TEXT,
 		},
 		author: {
-			type: DataTypes.STRING,
+			type: DataTypes.TEXT,
 		},
 		genre: {
-			type: DataTypes.STRING,
+			type: DataTypes.TEXT,
+		},
+		rating: {
+			type: DataTypes.DECIMAL(10, 2),
+		},
+		rating_count: {
+			type: DataTypes.INTEGER,
+		},
+		review_count: {
+			type: DataTypes.INTEGER,
 		},
 		image_url: {
 			type: DataTypes.STRING,
 		},
+		goodreads_url: {
+			type: DataTypes.STRING,
+		},
 		pages: {
 			type: DataTypes.INTEGER,
+		},
+		recommended: {
+			type: DataTypes.TEXT,
 		},
 	},
 	{

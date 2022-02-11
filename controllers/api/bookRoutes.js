@@ -1,10 +1,11 @@
 const router = require('express').Router();
-const { Collection, Book, User } = require('../../models');
+const { Book } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // * /api/book
 
 // Get all saved books
+// ! DON'T DO THIS YET
 router.get('/', async (req, res) => {
 	try {
 		const bookData = await Book.findAll();
@@ -17,14 +18,10 @@ router.get('/', async (req, res) => {
 	}
 });
 
-// TODO: Get book by id
+// Get book by id
 router.get('/:id', async (req, res) => {
 	try {
-		const bookData = await Book.getById({
-			where: {
-				id: req.params.id,
-			},
-		});
+		const bookData = await Book.findByPk(req.params.id);
 
 		if (!bookData) {
 			res.status(404).json({ message: 'No book found with this id!' });

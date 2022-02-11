@@ -24,8 +24,6 @@ document
   .querySelector(".sign-in-htm")
   .addEventListener("submit", loginFormHandler);
 
-
-
 // signup logic
 const signupFormHandler = async (event) => {
   event.preventDefault();
@@ -52,3 +50,4 @@ const signupFormHandler = async (event) => {
 document
   .querySelector(".sign-up-htm")
   .addEventListener("submit", signupFormHandler);
+

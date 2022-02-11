@@ -26,7 +26,7 @@ router.get('/signup', async (req, res) => {
 // render home page
 router.get('/home', async (req, res) => {
 	try {
-		// Get all projects and JOIN with user data
+		// Get all books and JOIN with user data
 		const booktData = await Book.findAll({
 			include: [
 				{
@@ -41,6 +41,7 @@ router.get('/home', async (req, res) => {
 
 		// Pass serialized data and session flag into template
 		res.render('homepage', {
+			layout: 'home.handlebars',
 			books,
 			logged_in: req.session.logged_in,
 		});

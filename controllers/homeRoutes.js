@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const {Book, User} = require('../models');
 const withAuth = require('../utils/auth');
+const {randomNumber} = require('../utils/helpers');
 
 router.get('/', async (req, res) => {
   res.render('landingpage', {layout: 'landing.handlebars'});
@@ -25,23 +26,40 @@ router.get('/signup', async (req, res) => {
 // render home page
 router.get('/home', async (req, res) => {
   try {
-    // Get all books and JOIN with user data
-    // const booktData = await Book.findAll({
-    // 	include: [
-    // 		{
-    // 			model: User,
-    // 			attributes: ['name'],
-    // 		},
-    // 	],
-    // });
+    // user info
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: {exclude: ['password']},
+    });
 
-    // Serialize data so the template can read it
-    // const books = bookData.map((project) => book.get({ plain: true }));
+    const user = userData.get({plain: true});
 
-    // Pass serialized data and session flag into template
+    // top carousel
+    let randomBooks = [];
+
+    for (let i = 0; i < 6; i++) {
+      let randomId = randomNumber(10000);
+      const bookData = await Book.findByPk(randomId);
+
+      if (bookData.dataValues.image_url === null) i--;
+
+      randomBooks.push(bookData.dataValues);
+    }
+
+    // recommended books
+    let recommendedIds = [1168, 5944, 161, 47, 4011, 419, 1, 14, 22, 25];
+    let recommendedBooks = [];
+
+    for (let i = 0; i < recommendedIds.length; i++) {
+      const bookData = await Book.findByPk(recommendedIds[i]);
+
+      recommendedBooks.push(bookData.dataValues);
+    }
+
     res.render('homepage', {
       layout: 'home.handlebars',
-      // books,
+      user,
+      randomBooks,
+      recommendedBooks,
       logged_in: req.session.logged_in,
     });
   } catch (err) {

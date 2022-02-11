@@ -5,7 +5,7 @@
     <ul class='nav_links'>
       <li><a href='#' class='logo'>The Chronicler</a></li>
       <a class='dashboard' href='#'><button>Dashboard</button></a>
-      <li>Welcome Back, Alex!</li>
+      <li>Welcome Back, {{user.name}}!</li>
     </ul>
   </nav>
   <form id='content' class='hide'>
@@ -31,30 +31,13 @@
 
       <div class='swiper books-slider'>
         <div class='swiper-wrapper'>
-          <a href='#' class='swiper-slide'><img
-              src='/image/book-1.png'
-              alt=''
-            /></a>
-          <a href='#' class='swiper-slide'><img
-              src='/image/book-2.png'
-              alt=''
-            /></a>
-          <a href='#' class='swiper-slide'><img
-              src='/image/book-3.png'
-              alt=''
-            /></a>
-          <a href='#' class='swiper-slide'><img
-              src='/image/book-4.png'
-              alt=''
-            /></a>
-          <a href='#' class='swiper-slide'><img
-              src='/image/book-5.png'
-              alt=''
-            /></a>
-          <a href='#' class='swiper-slide'><img
-              src='/image/book-6.png'
-              alt=''
-            /></a>
+
+            {{#each randomBooks as |book|}}
+                <a href='/book/{{book.id}}' class='swiper-slide'>
+                    <img class="carousel-img" src='{{book.image_url}}' alt=''/>
+                </a>
+            {{/each}}
+
         </div>
         <img src='/image/stand.png' class='stand' alt='' />
       </div>
@@ -65,38 +48,35 @@
 
   <section class='categories'>
     <div class='category-header'>
-      <h3>Categories</h3>
+        <h3>Categories</h3>
     </div>
     <div class='swiper' id='category-slider'>
-      <div class='swiper-wrapper' id='category-align'>
-        <a href='#' class='swiper-slide'><img
-            src='/image/mystery.png'
-            alt=''
-          />
-          <p class='p-margin'>Mystery</p>
-        </a>
-        <a href='#' class='swiper-slide'><img
-            src='/image/fantasy.png'
-            alt=''
-          />
-          <p class='fantasy'>Fantasy</p></a>
-        <a href='#' class='swiper-slide'><img
-            src='/image/history.png'
-            alt=''
-          />
-          <p class='p-margin'>History</p></a>
-        <a href='#' class='swiper-slide'><img
-            src='/image/cooking.png'
-            alt=''
-          />
-          <p class='p-margin'>Cooking</p></a>
-        <a href='#' class='swiper-slide'><img src='/image/scifi.png' alt='' />
-          <p class='scifi'>Sci-Fi</p></a>
-        <a href='#' class='swiper-slide'><img src='/image/young.png' alt='' />
-          <p class='more'>Young Readers</p></a>
-        <!-- <div class="categories-button-next"></div>
-            <div class="categories-button-prev"></div> -->
-      </div>
+        <div class='swiper-wrapper' id='category-align'>
+            <a href='#' class='swiper-slide'>
+                <img src='/image/mystery.png' alt=''/>
+                <p class='p-margin'>Mystery</p>
+            </a>
+            <a href='#' class='swiper-slide'>
+                <img src='/image/fantasy.png' alt=''/>
+                <p class='fantasy'>Fantasy</p></a>
+            <a href='#' class='swiper-slide'>
+                <img src='/image/history.png' alt=''/>
+                <p class='p-margin'>History</p>
+            </a>
+            <a href='#' class='swiper-slide'>
+                <img src='/image/cooking.png' alt=''/>
+                <p class='p-margin'>Cooking</p></a>
+            <a href='#' class='swiper-slide'>
+                <img src='/image/scifi.png' alt=''/>
+                <p class='scifi'>Sci-Fi</p>
+            </a>
+            <a href='#' class='swiper-slide'>
+                <img src='/image/young.png' alt='' />
+                <p class='more'>Young Readers</p>
+            </a>
+            <!-- <div class="categories-button-next"></div>
+                <div class="categories-button-prev"></div> -->
+        </div>
     </div>
   </section>
 
@@ -106,100 +86,23 @@
     <h1 class='heading'><span>Recommended Books</span></h1>
 
     <div class='swiper recommended-slider'>
-      <div class='swiper-wrapper'>
-        <div class='swiper-slide box'>
-          <div class='image'>
-            <img src='image/book-1.png' alt='' />
-          </div>
-          <div class='content'>
-            <h3 class='new-books'>Recommended books</h3>
-          </div>
+        <div class='swiper-wrapper'>
+
+            {{#each recommendedBooks as |book|}}
+            <div class='swiper-slide box'>
+                <div class='image'>
+                    <img src='{{book.image_url}}' alt=''/>
+                </div>
+                <div class='content'>
+                    <h3 class='new-books'>{{book.title}}</h3>
+                </div>
+            </div>
+            {{/each}}
+    
         </div>
 
-        <div class='swiper-slide box'>
-          <div class='image'>
-            <img src='image/book-2.png' alt='' />
-          </div>
-          <div class='content'>
-            <h3 class='new-books'>Recommended books</h3>
-          </div>
-        </div>
-
-        <div class='swiper-slide box'>
-          <div class='image'>
-            <img src='image/book-3.png' alt='' />
-          </div>
-          <div class='content'>
-            <h3 class='new-books'>Recommended books</h3>
-          </div>
-        </div>
-
-        <div class='swiper-slide box'>
-          <div class='image'>
-            <img src='image/book-4.png' alt='' />
-          </div>
-          <div class='content'>
-            <h3 class='new-books'>Recommended books</h3>
-          </div>
-        </div>
-
-        <div class='swiper-slide box'>
-          <div class='image'>
-            <img src='image/book-5.png' alt='' />
-          </div>
-          <div class='content'>
-            <h3 class='new-books'>Recommended books</h3>
-          </div>
-        </div>
-
-        <div class='swiper-slide box'>
-          <div class='image'>
-            <img src='image/book-6.png' alt='' />
-          </div>
-          <div class='content'>
-            <h3 class='new-books'>Recommended books</h3>
-          </div>
-        </div>
-
-        <div class='swiper-slide box'>
-          <div class='image'>
-            <img src='image/book-7.png' alt='' />
-          </div>
-          <div class='content'>
-            <h3 class='new-books'>Recommended books</h3>
-          </div>
-        </div>
-
-        <div class='swiper-slide box'>
-          <div class='image'>
-            <img src='image/book-8.png' alt='' />
-          </div>
-          <div class='content'>
-            <h3 class='new-books'>Recommended books</h3>
-          </div>
-        </div>
-
-        <div class='swiper-slide box'>
-          <div class='image'>
-            <img src='image/book-9.png' alt='' />
-          </div>
-          <div class='content'>
-            <h3 class='new-books'>Recommended books</h3>
-          </div>
-        </div>
-
-        <div class='swiper-slide box'>
-          <div class='image'>
-            <img src='image/book-10.png' alt='' />
-          </div>
-          <div class='content'>
-            <h3 class='new-books'>Recommended books</h3>
-          </div>
-        </div>
-      </div>
-
-      <div class='swiper-button-next'></div>
-      <div class='swiper-button-prev'></div>
+        <div class='swiper-button-next'></div>
+        <div class='swiper-button-prev'></div>
     </div>
   </section>
 

@@ -409,6 +409,10 @@ footer .logo-footer {
   color: var(--fawn);
 }
 
+.carousel-img {
+  box-shadow: -5px 5px 10px #818181;
+}
+
 /* Media queries */
 
 @media (max-width: 1604px) {

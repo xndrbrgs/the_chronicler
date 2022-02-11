@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="home-page.css" />
+    <title>Home Page</title>
+  </head>
+  <body>
+    <!-- Header Section  -->
+
+    <header>
+      <nav>
+        <ul class="nav_links">
+          <li><a href="#" class="logo">The Chronicler</a></li>
+          <a class="dashboard" href="#"><button>Dashboard</button></a>
+          <li>Welcome Back, Alex!</li>
+        </ul>
+      </nav>
+      <form id="content" class="hide">
+        <input type="text" name="input" class="input" id="search-input">
+        <button type="reset" class="search" id="search-btn">Search</button>
+      </form>
+      <a class="logout" href="#logout"><button>Logout</button></a>
+    </header>
+
+    <main>
+      <!-- Jumbotron Section  -->
+
+      <section class="home" id="home">
+        <div class="row">
+          <div class="content">
+            <h3>Building your library?</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
+              deserunt nostrum accusamus. Nam alias sit necessitatibus, aliquid
+              ex minima at!
+            </p>
+          </div>
+
+          <div class="swiper books-slider">
+            <div class="swiper-wrapper">
+              <a href="#" class="swiper-slide"
+                ><img src="./image/book-1.png" alt=""
+              /></a>
+              <a href="#" class="swiper-slide"
+                ><img src="./image/book-2.png" alt=""
+              /></a>
+              <a href="#" class="swiper-slide"
+                ><img src="./image/book-3.png" alt=""
+              /></a>
+              <a href="#" class="swiper-slide"
+                ><img src="./image/book-4.png" alt=""
+              /></a>
+              <a href="#" class="swiper-slide"
+                ><img src="./image/book-5.png" alt=""
+              /></a>
+              <a href="#" class="swiper-slide"
+                ><img src="./image/book-6.png" alt=""
+              /></a>
+            </div>
+            <img src="./image/stand.png" class="stand" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Categories Section  -->
+
+      <section class="categories">
+        <div class="category-header">
+          <h3>Categories</h3>
+        </div>
+        <div class="swiper" id="category-slider">
+          <div class="swiper-wrapper" id="category-align">
+            <a href="#" class="swiper-slide"
+              ><img src="./image/mystery.png" alt="" />
+              <p class="p-margin">Mystery</p>
+            </a>
+            <a href="#" class="swiper-slide"
+              ><img src="./image/fantasy.png" alt="" />
+              <p class="fantasy">Fantasy</p></a
+            >
+            <a href="#" class="swiper-slide"
+              ><img src="./image/history.png" alt="" />
+              <p class="p-margin">History</p></a
+            >
+            <a href="#" class="swiper-slide"
+              ><img src="./image/cooking.png" alt="" />
+              <p class="p-margin">Cooking</p></a
+            >
+            <a href="#" class="swiper-slide"
+              ><img src="./image/scifi.png" alt="" />
+              <p class="scifi">Sci-Fi</p></a
+            >
+            <a href="#" class="swiper-slide"
+              ><img src="./image/young.png" alt="" />
+              <p class="more">Young Readers</p></a
+            >
+            <!-- <div class="categories-button-next"></div>
+            <div class="categories-button-prev"></div> -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Recommended Books Section  -->
+
+      <section class="recommended" id="recommended">
+        <h1 class="heading"><span>Recommended Books</span></h1>
+
+        <div class="swiper recommended-slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide box">
+              <div class="image">
+                <img src="image/book-1.png" alt="" />
+              </div>
+              <div class="content">
+                <h3 class="new-books">Recommended books</h3>
+              </div>
+            </div>
+
+            <div class="swiper-slide box">
+              <div class="image">
+                <img src="image/book-2.png" alt="" />
+              </div>
+              <div class="content">
+                <h3 class="new-books">Recommended books</h3>
+              </div>
+            </div>
+
+            <div class="swiper-slide box">
+              <div class="image">
+                <img src="image/book-3.png" alt="" />
+              </div>
+              <div class="content">
+                <h3 class="new-books">Recommended books</h3>
+              </div>
+            </div>
+
+            <div class="swiper-slide box">
+              <div class="image">
+                <img src="image/book-4.png" alt="" />
+              </div>
+              <div class="content">
+                <h3 class="new-books">Recommended books</h3>
+              </div>
+            </div>
+
+            <div class="swiper-slide box">
+              <div class="image">
+                <img src="image/book-5.png" alt="" />
+              </div>
+              <div class="content">
+                <h3 class="new-books">Recommended books</h3>
+              </div>
+            </div>
+
+            <div class="swiper-slide box">
+              <div class="image">
+                <img src="image/book-6.png" alt="" />
+              </div>
+              <div class="content">
+                <h3 class="new-books">Recommended books</h3>
+              </div>
+            </div>
+
+            <div class="swiper-slide box">
+              <div class="image">
+                <img src="image/book-7.png" alt="" />
+              </div>
+              <div class="content">
+                <h3 class="new-books">Recommended books</h3>
+              </div>
+            </div>
+
+            <div class="swiper-slide box">
+              <div class="image">
+                <img src="image/book-8.png" alt="" />
+              </div>
+              <div class="content">
+                <h3 class="new-books">Recommended books</h3>
+              </div>
+            </div>
+
+            <div class="swiper-slide box">
+              <div class="image">
+                <img src="image/book-9.png" alt="" />
+              </div>
+              <div class="content">
+                <h3 class="new-books">Recommended books</h3>
+              </div>
+            </div>
+
+            <div class="swiper-slide box">
+              <div class="image">
+                <img src="image/book-10.png" alt="" />
+              </div>
+              <div class="content">
+                <h3 class="new-books">Recommended books</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </section>
+
+      <!-- User Book Reviews  -->
+      <section class="reviews" id="reviews">
+        <h1 class="reviews-heading"><span>User Book Reviews</span></h1>
+
+        <div class="swiper reviews-slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide box">
+              <img src="image/alexb.jpg" alt="" />
+              <h3>Alex Borges</h3>
+              <h4>Percy Jackson & The Olympians</h4>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Aspernatur nihil ipsa placeat. Aperiam at sint, eos ex similique
+                facere hic.
+              </p>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+
+            <div class="swiper-slide box">
+              <img src="image/megan.jpg" alt="" />
+              <h3>Megan Labrecque</h3>
+              <h4>Harry Potter and the Philosopher's Stone</h4>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Aspernatur nihil ipsa placeat. Aperiam at sint, eos ex similique
+                facere hic.
+              </p>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+
+            <div class="swiper-slide box">
+              <img src="image/alexw.jpg" alt="" />
+              <h3>Alex Widener</h3>
+              <h4>The Giver</h4>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Aspernatur nihil ipsa placeat. Aperiam at sint, eos ex similique
+                facere hic.
+              </p>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+            <div class="swiper-slide box">
+              <img src="image/rashad.png" alt="" />
+              <h3>Rashad Anderson</h3>
+              <h4>War and Peace</h4>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Aspernatur nihil ipsa placeat. Aperiam at sint, eos ex similique
+                facere hic.
+              </p>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="swiper-slide box">
+              <img src="image/john.jpg" alt="" />
+              <h3>John Dinsmore</h3>
+              <h4>The House of Mirth</h4>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Aspernatur nihil ipsa placeat. Aperiam at sint, eos ex similique
+                facere hic.
+              </p>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+            <div class="swiper-slide box">
+              <img src="image/veronica.jpg" alt="" />
+              <h3>Veronica Harris</h3>
+              <h4>1984</h4>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Aspernatur nihil ipsa placeat. Aperiam at sint, eos ex similique
+                facere hic.
+              </p>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <section class="footer">
+          <div class="footer-text">
+            <h1 class="logo-footer">The Chronicler</h1>
+            <h3>Est. 2022</h3>
+          </div>
+          <div class="git-icons">
+            <a href="https://github.com/xndrbrgs">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://github.com/xndrbrgs">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://github.com/xndrbrgs">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://github.com/xndrbrgs">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </section>
+      </footer>
+    </main>
+  </body>
+  <script
+    src="https://kit.fontawesome.com/2d2ec9e6b7.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <script src="./home-page.js"></script>
+</html>

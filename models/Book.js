@@ -22,7 +22,7 @@ Book.init(
 			type: DataTypes.STRING,
 		},
 		pages: {
-			type: DataTypes.STRING,
+			type: DataTypes.INTEGER,
 		},
 	},
 	{

@@ -37,7 +37,9 @@ router.get('/home', async (req, res) => {
     let randomBooks = [];
 
     for (let i = 0; i < 6; i++) {
-      let randomId = randomNumber(10000);
+      // TODO: change this to 10,000!
+      // TODO: make this number based on the count of titles in the db
+      let randomId = randomNumber(500);
       const bookData = await Book.findByPk(randomId);
 
       if (bookData.dataValues.image_url === null) i--;
@@ -46,7 +48,8 @@ router.get('/home', async (req, res) => {
     }
 
     // recommended books
-    let recommendedIds = [1168, 5944, 161, 47, 4011, 419, 1, 14, 22, 25];
+    // let recommendedIds = [1168, 5944, 161, 47, 4011, 419, 1, 14, 22, 25];
+    let recommendedIds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let recommendedBooks = [];
 
     for (let i = 0; i < recommendedIds.length; i++) {

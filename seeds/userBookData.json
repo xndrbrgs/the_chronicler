@@ -1,0 +1,138 @@
+[
+  {
+    "user_id": 1,
+    "book_id": 454
+  },
+  {
+    "user_id": 1,
+    "book_id": 394
+  },
+  {
+    "user_id": 1,
+    "book_id": 146
+  },
+  {
+    "user_id": 1,
+    "book_id": 345
+  },
+  {
+    "user_id": 1,
+    "book_id": 246
+  },
+  {
+    "user_id": 2,
+    "book_id": 264
+  },
+  {
+    "user_id": 2,
+    "book_id": 498
+  },
+  {
+    "user_id": 2,
+    "book_id": 95
+  },
+  {
+    "user_id": 3,
+    "book_id": 154
+  },
+  {
+    "user_id": 3,
+    "book_id": 485
+  },
+  {
+    "user_id": 3,
+    "book_id": 154
+  },
+  {
+    "user_id": 3,
+    "book_id": 9
+  },
+  {
+    "user_id": 4,
+    "book_id": 1
+  },
+  {
+    "user_id": 4,
+    "book_id": 12
+  },
+  {
+    "user_id": 4,
+    "book_id": 154
+  },
+  {
+    "user_id": 4,
+    "book_id": 123
+  },
+  {
+    "user_id": 4,
+    "book_id": 456
+  },
+  {
+    "user_id": 4,
+    "book_id": 246
+  },
+  {
+    "user_id": 5,
+    "book_id": 323
+  },
+  {
+    "user_id": 5,
+    "book_id": 165
+  },
+  {
+    "user_id": 5,
+    "book_id": 31
+  },
+  {
+    "user_id": 5,
+    "book_id": 91
+  },
+  {
+    "user_id": 6,
+    "book_id": 46
+  },
+  {
+    "user_id": 6,
+    "book_id": 111
+  },
+  {
+    "user_id": 6,
+    "book_id": 222
+  },
+  {
+    "user_id": 6,
+    "book_id": 211
+  },
+  {
+    "user_id": 6,
+    "book_id": 294
+  },
+  {
+    "user_id": 6,
+    "book_id": 222
+  },
+  {
+    "user_id": 6,
+    "book_id": 200
+  },
+  {
+    "user_id": 6,
+    "book_id": 456
+  },
+  {
+    "user_id": 6,
+    "book_id": 212
+  },
+  {
+    "user_id": 6,
+    "book_id": 314
+  },
+  {
+    "user_id": 7,
+    "book_id": 315
+  },
+  {
+    "user_id": 7,
+    "book_id": 194
+  }
+]

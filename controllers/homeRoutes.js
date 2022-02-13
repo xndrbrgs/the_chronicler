@@ -57,7 +57,6 @@ router.get('/home', async (req, res) => {
     });
 
     res.render('homepage', {
-      layout: 'home.handlebars',
       user,
       randomBooks,
       recommendedBooks,

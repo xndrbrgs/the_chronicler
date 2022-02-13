@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const {User, Book} = require('../../models');
+const {User, Book, UserBook} = require('../../models');
 
 // * /api/user
 
-// ? TESTING -> Get all users
+// Get all users
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
@@ -80,6 +80,30 @@ router.post('/logout', (req, res) => {
     });
   } else {
     res.status(404).end();
+  }
+});
+
+// Get user by id
+router.get('/:id', async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.params.id, {
+      include: {
+        model: Book,
+        through: UserBook,
+      },
+      attributes: {
+        exclude: ['password'],
+      },
+    });
+
+    if (!userData) {
+      res.status(404).json({message: 'No user found with this id'});
+      return;
+    }
+
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 

@@ -9,12 +9,11 @@ router.get('/', async (req, res) => {
 
 // render login page
 router.get('/login', async (req, res) => {
-  // If the user is already logged in, redirect the request to another route
+  // redirect to home if user is logged in
   if (req.session.logged_in) {
     res.redirect('/home');
     return;
   }
-
   res.render('login');
 });
 
@@ -26,34 +25,34 @@ router.get('/signup', async (req, res) => {
 // render home page
 router.get('/home', async (req, res) => {
   try {
-    // user info
+    // USER INFO
     const userData = await User.findByPk(req.session.user_id, {
       attributes: {exclude: ['password']},
     });
-
     const user = userData.get({plain: true});
 
-    // top carousel
-    let randomBooks = [];
+    // TOP CAROUSEL
+    // get number of books in database
+    const bookNum = await Book.findAndCountAll();
+    const randomBooks = [];
 
     for (let i = 0; i < 6; i++) {
-      let randomId = randomNumber(10000);
-      const bookData = await Book.findByPk(randomId);
+      // get book of random ids based on db length
+      const bookData = await Book.findByPk(randomNumber(bookNum.count));
 
+      // if book doesn't have image_url, try again
       if (bookData.dataValues.image_url === null) i--;
-
       randomBooks.push(bookData.dataValues);
     }
 
-    // recommended books
-    let recommendedIds = [1168, 5944, 161, 47, 4011, 419, 1, 14, 22, 25];
-    let recommendedBooks = [];
+    // RECOMMENDED
+    const recommendedIds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const recommendedBooks = [];
 
-    for (let i = 0; i < recommendedIds.length; i++) {
-      const bookData = await Book.findByPk(recommendedIds[i]);
-
+    recommendedIds.forEach(async (id) => {
+      const bookData = await Book.findByPk(id);
       recommendedBooks.push(bookData.dataValues);
-    }
+    });
 
     res.render('homepage', {
       layout: 'home.handlebars',
@@ -71,24 +70,7 @@ router.get('/home', async (req, res) => {
 router.get('/book/:id', async (req, res) => {
   try {
     const bookData = await Book.findByPk(req.params.id, {
-      include: [
-        {
-          model: Book,
-          attributes: [
-            'id',
-            'title',
-            'description',
-            'author',
-            'genre',
-            'raiting',
-            'raiting_count',
-            'image_url',
-            'goodreads_url',
-            'pages',
-            'recommended',
-          ],
-        },
-      ],
+      include: [{model: Book}],
     });
 
     const book = bookData.get({plain: true});

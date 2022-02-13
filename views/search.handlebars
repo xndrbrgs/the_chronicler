@@ -1,0 +1,27 @@
+{{!-- categories --}}
+<section class="categories">
+    <div class="category-header">
+        <h1>Results for: {{searchedTerm}}</h1>
+    </div>
+</section>
+
+{{!-- content --}}
+
+<section class="home" id="home">
+    <div class="container">
+        <div class="row">
+            {{#each books as |book|}}
+            <div class="col" id="details">
+                <img src="{{book.image_url}}" alt=""/>
+                <h1>{{book.title}}</h1>
+                <h2>{{book.author}}</h2>
+                <h3>{{book.goodreads_rating}}</h3>
+                <h4>goodreads here!</h4>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    </div>
+</section>
+
+<script src="./js/category.js"></script>

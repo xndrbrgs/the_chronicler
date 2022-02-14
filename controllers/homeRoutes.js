@@ -70,13 +70,13 @@ router.get('/home', async (req, res) => {
 // Render search results
 router.get('/search/:term', async (req, res) => {
   try {
-    // USER INFO
+    // get user info
     const userData = await User.findByPk(req.session.user_id, {
       attributes: {exclude: ['password']},
     });
     const user = userData.get({plain: true});
-    const searchedTerm = req.params.term;
 
+    const searchedTerm = req.params.term;
     const bookData = await Book.findAll({
       where: {
         [Op.or]: [

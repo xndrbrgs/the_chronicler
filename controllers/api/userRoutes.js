@@ -6,10 +6,7 @@ const {User, Book, UserBook} = require('../../models');
 // Get all users
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
     const userData = await User.findAll();
-
-    // Serialize data so the template can read it
     const users = userData.map((user) => user.get({plain: true}));
 
     res.status(200).json(users);
@@ -83,7 +80,7 @@ router.post('/logout', (req, res) => {
   }
 });
 
-// Add book to user
+// Add book to user collection
 router.post('/add', async (req, res) => {
   try {
     const userData = await UserBook.create({

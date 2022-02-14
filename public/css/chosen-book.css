@@ -1,119 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-}
-
-:root {
-  --darkolive: #606c38;
-  --kombugreen: #283618;
-  --cornsilk: ##fefae0;
-  --fawn: #dda15e;
-  --liverdogs: #bc6c25;
-  --border: 0.1rem solid rgba(0, 0, 0, 0.1);
-  --border-hover: 0.1rem solid var(--black);
-  --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-}
-
-html {
-  scroll-behavior: smooth;
-  height: 100%;
-  font-size: 62.5%;
-  overflow-x: hidden;
-  scroll-padding-top: 5rem;
-  scroll-behavior: smooth;
-}
-
-/* Header and Nav  */
-
-li,
-a,
-button {
-  font-weight: 500;
-  font-size: 20px;
-  color: #283618;
-  text-decoration: none;
-}
-
-header {
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 40px 100px;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-header .logo {
-  color: #283618;
-  text-transform: uppercase;
-  cursor: pointer;
-  font-family: 'Abril Fatface', cursive;
-  font-size: 1.3em;
-}
-
-.nav_links {
-  list-style: none;
-}
-
-.nav_links li {
-  display: inline-block;
-  padding: 0px 20px;
-}
-
-.nav_links li a {
-  transition: all 0.3s ease 0s;
-}
-
-.nav_links li a:hover {
-  color: rgba(96, 108, 56, 1);
-}
-
-.logout {
-  margin: 0 20px;
-}
-
-.dashboard:hover {
-  color: rgba(96, 108, 56, 0.5);
-}
-
-#search-input {
-  width: 300px;
-  margin: 0 20px;
-  border: 3px solid #ccc;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  outline: none;
-  border-radius: 50px;
-  padding: 12px 20px;
-  display: inline-block;
-  text-align: center;
-}
-
-#search-input:focus {
-  border: 3px solid #555;
-}
-
-button {
-  padding: 9px 25px;
-  background-color: rgba(96, 108, 56, 1);
-  color: white;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-}
-
-button:hover {
-  background-color: rgba(96, 108, 56, 0.8);
-  transform: translate(0, -5px);
-}
-
 #delete-btn {
   margin-top: 10px;
 }
@@ -131,15 +15,19 @@ button:hover {
 
 /* Slider */
 
-.home {
-  background: url(../main-page/image/banner-bg.jpg) no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
 .home img {
   height: 45rem;
   margin: 30px 0;
+}
+
+#book-center {
+  text-align: center;
+}
+
+#image-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #details {
@@ -165,6 +53,7 @@ button:hover {
 #details h4 {
   font-size: 1.8rem;
   margin-top: 20px;
+  text-align: justify;
 }
 
 #details p {
@@ -172,130 +61,10 @@ button:hover {
   margin-top: 70px;
 }
 
-/* Recommended Section  */
-
-.heading {
-  margin: 30px;
-  color: var(--kombugreen);
-  text-align: center;
-  font-size: 3.2rem;
-  left: 0;
-  top: 50%;
-  width: 100%;
-}
-
-.recommended .recommended-slider .box {
-  margin: 2rem 0;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-}
-
-.recommended .recommended-slider .box:hover {
-  border: var(--border-hover);
-}
-
-.recommended .recommended-slider .box .image {
-  padding: 1rem;
-  background: linear-gradient(15deg, #eee 30%, #fff 30%);
-}
-
-.recommended .recommended-slider .box:hover .image {
-  transform: translateY(1rem);
-  transition: all 0.3s ease 0s;
-}
-
-.recommended .recommended-slider .box .image img {
-  height: 25rem;
-}
-
-.recommended .recommended-slider .box .content {
-  background: #eee;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.new-books {
-  font-size: 2.5rem;
-  color: var(--kombugreen);
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-  border: var(--border-hover);
-  height: 4rem;
-  width: 4rem;
-  color: white;
-  background: var(--darkolive);
-  transition: all 0.3s ease 0s;
-}
-
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  font-size: 2rem;
-}
-
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  background: rgba(0, 0, 0, 0);
-  color: #fff;
-}
-
-/* Footer Section */
-
-footer {
-  padding-top: 75px;
-  padding-bottom: 65px;
-  background-color: var(--kombugreen);
-  font-size: 1.4rem;
-}
-
-.footer-text h1 {
-  color: #fff;
-  text-align: center;
-  padding: 10px;
-}
-
-.footer-text h3 {
-  color: #fff;
-  text-align: center;
-  padding: 10px;
-  font-size: 2rem;
-}
-
-footer .logo-footer {
-  color: white;
-  text-transform: uppercase;
-  font-family: 'Abril Fatface', cursive;
-  font-size: 2em;
-}
-
-.git-icons {
-  text-align: center;
-}
-
-.git-icons .fab {
-  padding: 30px;
-  font-size: 20px;
-  color: #edf0f1;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-}
-
-.git-icons .fab:hover {
-  color: var(--fawn);
-}
-
 /* Media queries */
 
 @media (max-width: 1604px) {
-  header {
-    padding: 40px;
-  }
   .home img {
     height: 25rem;
-  }
-  .hide {
-    display: none;
   }
 }

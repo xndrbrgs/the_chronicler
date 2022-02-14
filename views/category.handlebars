@@ -13,7 +13,9 @@
         <div class="row">
             {{#each categories as |book|}}
             <div class="col" id="details">
-                <img src="{{book.image_url}}" alt="" />
+                <a href="/book/{{book.id}}">
+                    <img src="{{book.image_url}}" alt="">
+                </a>
                 <h1>{{book.title}}</h1>
                 <h2>{{book.author}}</h2>
                 <h3>{{book.rating}}/5</h3>

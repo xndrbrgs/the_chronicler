@@ -55,7 +55,7 @@ router.get('/home', async (req, res) => {
       const bookData = await Book.findByPk(id);
       recommendedBooks.push(bookData.dataValues);
     });
-
+    console.log('HERE IS THE BOOK DATA!!!!', recommendedBooks)
     res.render('homepage', {
       user,
       randomBooks,
@@ -76,7 +76,7 @@ router.get('/search/:term', async (req, res) => {
     });
     const user = userData.get({plain: true});
 
-    const searchedTerm = req.params.term;
+    const searchedTerm = req.params.term.replace('%20', '_');
     const bookData = await Book.findAll({
       where: {
         [Op.or]: [
@@ -118,8 +118,9 @@ router.get('/book/:id', async (req, res) => {
 
     const recommendedData = book.recommended.slice(1, -1).split("', '");
     const recommendedBooks = recommendedData.map((element) =>
-      element.replace('"', '').replace("'", '').split('|')
+      element.replace('"', '').replace("'", '').split('|'),
     );
+    console.log(recommendedData)
 
     // render chosen book page
     res.render('chosenbook', {

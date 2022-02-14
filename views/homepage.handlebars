@@ -1,52 +1,32 @@
-<!-- Header Section  -->
-
-<header>
-  <nav>
-    <ul class='nav_links'>
-      <li><a href='#' class='logo'>The Chronicler</a></li>
-      <a class='dashboard' href='#'><button>Dashboard</button></a>
-      <li>Welcome Back, {{user.name}}!</li>
-    </ul>
-  </nav>
-  <form id='content' class='hide'>
-    <input type='text' name='input' class='input' id='search-input' />
-    <button type='reset' class='search' id='search-btn'>Search</button>
-  </form>
-  <a id="logout" class='logout'><button>Logout</button></a>
-</header>
-
-<main>
-  <!-- Jumbotron Section  -->
-
-  <section class='home' id='home'>
+{{!-- jumbotron --}}
+<section class='home' id='home'>
     <div class='row'>
-      <div class='content'>
-        <h3>Building your library?</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
-          deserunt nostrum accusamus. Nam alias sit necessitatibus, aliquid ex
-          minima at!
-        </p>
-      </div>
-
-      <div class='swiper books-slider'>
-        <div class='swiper-wrapper'>
-
-            {{#each randomBooks as |book|}}
-                <a href='/book/{{book.id}}' class='swiper-slide'>
-                    <img class="carousel-img" src='{{book.image_url}}' alt=''/>
-                </a>
-            {{/each}}
-
+        <div class='content'>
+            <h3>Building your library?</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
+                deserunt nostrum accusamus. Nam alias sit necessitatibus, aliquid ex
+                minima at!
+            </p>
         </div>
-        <img src='/image/stand.png' class='stand' alt='' />
-      </div>
+
+        <div class='swiper books-slider'>
+            <div class='swiper-wrapper'>
+
+                {{#each randomBooks as |book|}}
+                    <a href='/book/{{book.id}}' class='swiper-slide'>
+                        <img class="carousel-img" src='{{book.image_url}}' alt=''/>
+                    </a>
+                {{/each}}
+
+            </div>
+            <img src='/image/stand.png' class='stand' alt='' />
+        </div>
     </div>
-  </section>
+</section>
 
-  <!-- Categories Section  -->
-
-  <section class='categories'>
+{{!-- categories --}}
+<section class='categories'>
     <div class='category-header'>
         <h3>Categories</h3>
     </div>
@@ -78,11 +58,10 @@
                 <div class="categories-button-prev"></div> -->
         </div>
     </div>
-  </section>
+</section>
 
-  <!-- Recommended Books Section  -->
-
-  <section class='recommended' id='recommended'>
+{{!-- recommended --}}
+<section class='recommended' id='recommended'>
     <h1 class='heading'><span>Recommended Books</span></h1>
 
     <div class='swiper recommended-slider'>
@@ -98,139 +77,115 @@
                 </div>
             </div>
             {{/each}}
-    
+
         </div>
 
         <div class='swiper-button-next'></div>
         <div class='swiper-button-prev'></div>
     </div>
-  </section>
+</section>
 
-  <!-- User Book Reviews  -->
-  <section class='reviews' id='reviews'>
+{{!-- testimonials --}}
+<section class='reviews' id='reviews'>
     <h1 class='reviews-heading'><span>User Book Reviews</span></h1>
 
     <div class='swiper reviews-slider'>
-      <div class='swiper-wrapper'>
+        <div class='swiper-wrapper'>
         <div class='swiper-slide box'>
-          <img src='image/alexb.jpg' alt='' />
-          <h3>Alex Borges</h3>
-          <h4>Percy Jackson & The Olympians</h4>
-          <p>
+            <img src='image/alexb.jpg' alt='' />
+            <h3>Alex Borges</h3>
+            <h4>Percy Jackson & The Olympians</h4>
+            <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur
             nihil ipsa placeat. Aperiam at sint, eos ex similique facere hic.
-          </p>
-          <div class='stars'>
+            </p>
+            <div class='stars'>
             <i class='fas fa-star'></i>
             <i class='fas fa-star'></i>
             <i class='fas fa-star'></i>
-          </div>
+            </div>
         </div>
 
         <div class='swiper-slide box'>
-          <img src='image/megan.jpg' alt='' />
-          <h3>Megan Labrecque</h3>
-          <h4>Harry Potter and the Philosopher's Stone</h4>
-          <p>
+            <img src='image/megan.jpg' alt='' />
+            <h3>Megan Labrecque</h3>
+            <h4>Harry Potter and the Philosopher's Stone</h4>
+            <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur
             nihil ipsa placeat. Aperiam at sint, eos ex similique facere hic.
-          </p>
-          <div class='stars'>
+            </p>
+            <div class='stars'>
             <i class='fas fa-star'></i>
             <i class='fas fa-star'></i>
             <i class='fas fa-star'></i>
             <i class='fas fa-star'></i>
-          </div>
+            </div>
         </div>
 
         <div class='swiper-slide box'>
-          <img src='image/alexw.jpg' alt='' />
-          <h3>Alex Widener</h3>
-          <h4>The Giver</h4>
-          <p>
+            <img src='image/alexw.jpg' alt='' />
+            <h3>Alex Widener</h3>
+            <h4>The Giver</h4>
+            <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur
             nihil ipsa placeat. Aperiam at sint, eos ex similique facere hic.
-          </p>
-          <div class='stars'>
+            </p>
+            <div class='stars'>
             <i class='fas fa-star'></i>
             <i class='fas fa-star'></i>
             <i class='fas fa-star'></i>
             <i class='fas fa-star'></i>
             <i class='fas fa-star'></i>
-          </div>
+            </div>
         </div>
         <div class='swiper-slide box'>
-          <img src='image/rashad.png' alt='' />
-          <h3>Rashad Anderson</h3>
-          <h4>War and Peace</h4>
-          <p>
+            <img src='image/rashad.png' alt='' />
+            <h3>Rashad Anderson</h3>
+            <h4>War and Peace</h4>
+            <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur
             nihil ipsa placeat. Aperiam at sint, eos ex similique facere hic.
-          </p>
-          <div class='stars'>
+            </p>
+            <div class='stars'>
             <i class='fas fa-star'></i>
             <i class='fas fa-star'></i>
             <i class='fas fa-star'></i>
             <i class='fas fa-star'></i>
             <i class='fas fa-star-half-alt'></i>
-          </div>
+            </div>
         </div>
         <div class='swiper-slide box'>
-          <img src='image/john.jpg' alt='' />
-          <h3>John Dinsmore</h3>
-          <h4>The House of Mirth</h4>
-          <p>
+            <img src='image/john.jpg' alt='' />
+            <h3>John Dinsmore</h3>
+            <h4>The House of Mirth</h4>
+            <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur
             nihil ipsa placeat. Aperiam at sint, eos ex similique facere hic.
-          </p>
-          <div class='stars'>
+            </p>
+            <div class='stars'>
             <i class='fas fa-star'></i>
             <i class='fas fa-star'></i>
             <i class='fas fa-star'></i>
             <i class='fas fa-star'></i>
             <i class='fas fa-star'></i>
-          </div>
+            </div>
         </div>
         <div class='swiper-slide box'>
-          <img src='image/veronica.jpg' alt='' />
-          <h3>Veronica Harris</h3>
-          <h4>1984</h4>
-          <p>
+            <img src='image/veronica.jpg' alt='' />
+            <h3>Veronica Harris</h3>
+            <h4>1984</h4>
+            <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur
             nihil ipsa placeat. Aperiam at sint, eos ex similique facere hic.
-          </p>
-          <div class='stars'>
+            </p>
+            <div class='stars'>
             <i class='fas fa-star'></i>
             <i class='fas fa-star'></i>
             <i class='fas fa-star'></i>
             <i class='fas fa-star'></i>
             <i class='fas fa-star'></i>
-          </div>
+            </div>
         </div>
-      </div>
+        </div>
     </div>
-  </section>
-
-  <footer>
-    <section class='footer'>
-      <div class='footer-text'>
-        <h1 class='logo-footer'>The Chronicler</h1>
-        <h3>Est. 2022</h3>
-      </div>
-      <div class='git-icons'>
-        <a href='https://github.com/xndrbrgs'>
-          <i class='fab fa-github'></i>
-        </a>
-        <a href='https://github.com/xndrbrgs'>
-          <i class='fab fa-github'></i>
-        </a>
-        <a href='https://github.com/xndrbrgs'>
-          <i class='fab fa-github'></i>
-        </a>
-        <a href='https://github.com/xndrbrgs'>
-          <i class='fab fa-github'></i>
-        </a>
-      </div>
-    </section>
-  </footer>
-</main>
+</section>

@@ -2,6 +2,8 @@ const router = require('express').Router();
 const {Book, User} = require('../models');
 const withAuth = require('../utils/auth');
 const {randomNumber} = require('../utils/helpers');
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 router.get('/', async (req, res) => {
   res.render('landingpage', {layout: 'landing.handlebars'});
@@ -55,10 +57,45 @@ router.get('/home', async (req, res) => {
     });
 
     res.render('homepage', {
-      layout: 'home.handlebars',
       user,
       randomBooks,
       recommendedBooks,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Render search results
+router.get('/search/:term', async (req, res) => {
+  try {
+    // USER INFO
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: {exclude: ['password']},
+    });
+    const user = userData.get({plain: true});
+
+    const bookData = await Book.findAll({
+      where: {
+        [Op.or]: [
+          {title: {[Op.like]: `%${req.params.term}%`}},
+          {author: {[Op.like]: `%${req.params.term}%`}},
+          {genre: {[Op.like]: `%${req.params.term}%`}},
+        ],
+      },
+    });
+
+    const searchedTerm = req.params.term;
+
+    const books = bookData.map((book) => book.get({plain: true}));
+
+    // res.status(200).json(bookData);
+
+    res.render('search', {
+      user,
+      searchedTerm,
+      books,
       logged_in: req.session.logged_in,
     });
   } catch (err) {

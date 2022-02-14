@@ -32,27 +32,27 @@
     </div>
     <div class='swiper' id='category-slider'>
         <div class='swiper-wrapper' id='category-align'>
-            <a href='#' class='swiper-slide'>
+            <a href='/category/mystery' class='swiper-slide'>
                 <img src='/image/mystery.png' alt=''/>
                 <p class='p-margin'>Mystery</p>
             </a>
-            <a href='#' class='swiper-slide'>
+            <a href='/category/fantasy' class='swiper-slide'>
                 <img src='/image/fantasy.png' alt=''/>
                 <p class='fantasy'>Fantasy</p></a>
-            <a href='#' class='swiper-slide'>
+            <a href='/category/history' class='swiper-slide'>
                 <img src='/image/history.png' alt=''/>
                 <p class='p-margin'>History</p>
             </a>
-            <a href='#' class='swiper-slide'>
+            <a href='/category/cooking' class='swiper-slide'>
                 <img src='/image/cooking.png' alt=''/>
                 <p class='p-margin'>Cooking</p></a>
-            <a href='#' class='swiper-slide'>
+            <a href='/category/science_fiction' class='swiper-slide'>
                 <img src='/image/scifi.png' alt=''/>
                 <p class='scifi'>Sci-Fi</p>
             </a>
-            <a href='#' class='swiper-slide'>
+            <a href='/category/young_adult' class='swiper-slide'>
                 <img src='/image/young.png' alt='' />
-                <p class='more'>Young Readers</p>
+                <p class='more'>Young Adult</p>
             </a>
             <!-- <div class="categories-button-next"></div>
                 <div class="categories-button-prev"></div> -->
@@ -70,7 +70,9 @@
             {{#each recommendedBooks as |book|}}
             <div class='swiper-slide box'>
                 <div class='image'>
-                    <img src='{{book.image_url}}' alt=''/>
+                    <a href="/book/{{book.id}}">
+                        <img src='{{book.image_url}}' alt=''/>
+                    </a>
                 </div>
                 <div class='content'>
                     <h3 class='new-books'>{{book.title}}</h3>

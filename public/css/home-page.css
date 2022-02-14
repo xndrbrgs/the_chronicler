@@ -118,6 +118,74 @@
   background: rgba(0, 0, 0, 0);
   color: #fff;
 }
+/* Recommended Section  */
+
+.heading {
+  margin: 30px;
+  color: var(--kombugreen);
+  text-align: center;
+  font-size: 3.2rem;
+  left: 0;
+  top: 50%;
+  width: 100%;
+}
+
+.recommended .recommended-slider .box {
+  margin: 2rem 0;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.recommended .recommended-slider .box:hover {
+  border: var(--border-hover);
+}
+
+.recommended .recommended-slider .box .image {
+  padding: 1rem;
+  background: linear-gradient(15deg, #eee 30%, #fff 30%);
+}
+
+.recommended .recommended-slider .box:hover .image {
+  transform: translateY(1rem);
+  transition: all 0.3s ease 0s;
+}
+
+.recommended .recommended-slider .box .image img {
+  height: 25rem;
+}
+
+.recommended .recommended-slider .box .content {
+  background: #eee;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.new-books {
+  font-size: 2rem;
+  color: var(--kombugreen);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  border: var(--border-hover);
+  height: 4rem;
+  width: 4rem;
+  color: white;
+  background: var(--darkolive);
+  transition: all 0.3s ease 0s;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 2rem;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: rgba(0, 0, 0, 0);
+  color: #fff;
+}
 
 /* User Reviews Section */
 

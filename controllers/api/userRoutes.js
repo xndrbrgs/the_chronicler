@@ -94,6 +94,28 @@ router.post('/add', async (req, res) => {
   }
 });
 
+// Delete book from user collection
+router.delete('/delete/:id', async (req, res) => {
+  try {
+    console.log('!!! SUPER IMPORTANT', req.params.id, req.session.user_id);
+    const bookData = await UserBook.destroy({
+      where: {
+        book_id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    });
+
+    if (!bookData) {
+      res.status(404).json({message: 'No book found with this id!'});
+      return;
+    }
+
+    res.status(200).json(bookData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 // Get user by id
 router.get('/:id', async (req, res) => {
   try {

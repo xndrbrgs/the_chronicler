@@ -6,10 +6,7 @@ const {User, Book, UserBook} = require('../../models');
 // Get all users
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
     const userData = await User.findAll();
-
-    // Serialize data so the template can read it
     const users = userData.map((user) => user.get({plain: true}));
 
     res.status(200).json(users);
@@ -80,6 +77,31 @@ router.post('/logout', (req, res) => {
     });
   } else {
     res.status(404).end();
+  }
+});
+
+// Add book to user collection
+router.post('/add', async (req, res) => {
+  try {
+    const existingBook = await UserBook.findAll({
+      where: {
+        user_id: req.session.user_id,
+        book_id: req.body.book_id,
+      },
+    });
+
+    if (!existingBook) {
+      const userData = await UserBook.create({
+        user_id: req.session.user_id,
+        book_id: req.body.book_id,
+      });
+
+      res.status(200).json(userData);
+    } else {
+      res.status(200).json({message: 'Book already in your collection!'});
+    }
+  } catch (err) {
+    res.status(400).json(err);
   }
 });
 

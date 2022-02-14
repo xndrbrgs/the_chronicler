@@ -20,6 +20,16 @@
   margin: 30px 0;
 }
 
+#book-center {
+  text-align: center;
+}
+
+#image-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #details {
   margin: 40px 30px;
   color: #283618;
@@ -43,6 +53,7 @@
 #details h4 {
   font-size: 1.8rem;
   margin-top: 20px;
+  text-align: justify;
 }
 
 #details p {

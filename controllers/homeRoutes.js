@@ -132,6 +132,36 @@ router.get('/book/:id', async (req, res) => {
   }
 });
 
+// Get book by Genre
+router.get('/category/:genre', async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: {exclude: ['password']},
+    });
+    const user = userData.get({plain: true});
+
+    const categoryTitle = req.params.genre.toUpperCase().replace('_', ' ');
+
+    const categoryData = await Book.findAll({
+      where: {
+        genre: {
+          [Op.like]: `%${req.params.genre}%`,
+        },
+      },
+    });
+
+    const categories = categoryData.map((book) => book.get({plain: true}));
+
+    res.render('category', {
+      user,
+      categories,
+      categoryTitle,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // render user by id
 router.get('/user/:id', async (req, res) => {
   try {

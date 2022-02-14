@@ -105,24 +105,26 @@ router.get('/book/:id', async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: {exclude: ['password']},
+      include: [{model: Book}],
     });
     const user = userData.get({plain: true});
 
     const bookData = await Book.findByPk(req.params.id);
     const book = bookData.get({plain: true});
 
-    // TODO: find a way to get book image_url
+    // compare 'book' to 'user.books'\
+    const userBookIds = user.books.map((book) => book.id);
+    const hasBook = userBookIds.includes(book.id);
+
     const recommendedData = book.recommended.slice(1, -1).split("', '");
     const recommendedBooks = recommendedData.map((element) =>
       element.replace('"', '').replace("'", '').split('|')
     );
 
-    console.log(recommendedBooks);
-    console.log(recommendedData);
-
     // render chosen book page
     res.render('chosenbook', {
       ...book,
+      hasBook,
       recommendedBooks,
       user,
       logged_in: req.session.logged_in,

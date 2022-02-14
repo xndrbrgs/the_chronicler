@@ -3,7 +3,14 @@
         <div class="row">
             <div class="col">
                 <img src='{{image_url}}' alt="">
-                <button id="add-btn">Add Book to Your Collection</button>
+                <div class="col">
+                    {{#if hasBook}}
+                    <button id="add-btn" class="disabled" disabled>In Your Collection</button> <br>
+                    <button id="delete-btn" class="btn-danger">Remove from Your Collection</button>
+                    {{else}}
+                    <button id="add-btn">Add Book to Your Collection</button>
+                    {{/if}}
+                </div>
             </div>
             <div class="col" id="details" data-id="{{id}}">
                 <h1>{{title}}</h1>
@@ -45,4 +52,4 @@
 </section>
 
 <script src="/js/chosen-book.js"></script>
-<script src="/js/add-book.js"></script>
+<script src="/js/handle-book.js"></script>

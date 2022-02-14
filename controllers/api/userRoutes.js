@@ -83,12 +83,23 @@ router.post('/logout', (req, res) => {
 // Add book to user collection
 router.post('/add', async (req, res) => {
   try {
-    const userData = await UserBook.create({
-      user_id: req.session.user_id,
-      book_id: req.body.book_id,
+    const existingBook = await UserBook.findAll({
+      where: {
+        user_id: req.session.user_id,
+        book_id: req.body.book_id,
+      },
     });
 
-    res.status(200).json(userData);
+    if (!existingBook) {
+      const userData = await UserBook.create({
+        user_id: req.session.user_id,
+        book_id: req.body.book_id,
+      });
+
+      res.status(200).json(userData);
+    } else {
+      res.status(200).json({message: 'Book already in your collection!'});
+    }
   } catch (err) {
     res.status(400).json(err);
   }

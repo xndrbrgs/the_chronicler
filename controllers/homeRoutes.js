@@ -119,7 +119,7 @@ router.get('/book/:id', async (req, res) => {
     const recommendedData = book.recommended.slice(1, -1).split("', '");
     const recommendedBooks = recommendedData.map((element) =>
       element.replace('"', '').replace("'", '').split('|')
-    );
+      );
 
     // render chosen book page
     res.render('chosenbook', {

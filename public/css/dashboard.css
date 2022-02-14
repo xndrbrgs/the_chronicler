@@ -9,7 +9,7 @@ header {
 /* Siderbar - Left  */
 
 .sidebar {
-  height: 100%;
+  height: 100vh;
   width: 240px;
   position: fixed;
   z-index: 1;
@@ -70,4 +70,8 @@ header {
 .book-database img {
   margin: 30px 20px;
   height: 25rem;
+}
+
+.container {
+  margin-left: 13%;
 }

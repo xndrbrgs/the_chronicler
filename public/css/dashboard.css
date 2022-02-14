@@ -8,10 +8,14 @@ header {
 
 /* Siderbar - Left  */
 
+.nav-list {
+  position: relative;
+}
+
 .sidebar {
   height: 100vh;
   width: 240px;
-  position: fixed;
+  position: absolute;
   z-index: 1;
   left: 0;
   overflow-x: hidden;
@@ -34,7 +38,7 @@ header {
 }
 
 #sidebar-buttons {
-  margin: 40px 0;
+  margin: 40px -20px 0 0;
   width: 200px;
   font-weight: 500;
   font-size: 20px;

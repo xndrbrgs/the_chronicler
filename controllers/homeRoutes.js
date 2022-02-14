@@ -75,6 +75,7 @@ router.get('/search/:term', async (req, res) => {
       attributes: {exclude: ['password']},
     });
     const user = userData.get({plain: true});
+    const searchedTerm = req.params.term;
 
     const bookData = await Book.findAll({
       where: {
@@ -86,11 +87,7 @@ router.get('/search/:term', async (req, res) => {
       },
     });
 
-    const searchedTerm = req.params.term;
-
     const books = bookData.map((book) => book.get({plain: true}));
-
-    // res.status(200).json(bookData);
 
     res.render('search', {
       user,
@@ -103,26 +100,31 @@ router.get('/search/:term', async (req, res) => {
   }
 });
 
-// TODO: Use this to fill in dynamic links for chosen book
 // render book by id
 router.get('/book/:id', async (req, res) => {
   try {
-    const bookData = await Book.findByPk(req.params.id, {
-      include: [{model: Book}],
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: {exclude: ['password']},
     });
+    const user = userData.get({plain: true});
 
+    const bookData = await Book.findByPk(req.params.id);
     const book = bookData.get({plain: true});
 
-    // res.render('book', {
-    //   ...book,
-    //   logged_in: req.session.logged_in,
-    // });
+    // TODO: find a way to get book image_url
+    const recommendedData = book.recommended.slice(1, -1).split("', '");
+    const recommendedBooks = recommendedData.map((element) =>
+      element.replace('"', '').replace("'", '').split('|')
+    );
+
+    console.log(recommendedBooks);
+    console.log(recommendedData);
 
     // render chosen book page
     res.render('chosenbook', {
-      layout: 'chosen.handlebars',
       ...book,
-      Book,
+      recommendedBooks,
+      user,
       logged_in: req.session.logged_in,
     });
   } catch (err) {

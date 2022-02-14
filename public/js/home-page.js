@@ -7,29 +7,7 @@ const expand = (e) => {
   input.classList.toggle('square');
 };
 
-// make fetch request and render page
-// const handleSearch = async () => {
-//   const userSearch = input.value;
-//   if (userSearch) {
-//     fetchBooks(userSearch).then((books) => {
-//       console.log(books);
-//       // TODO: redirect to search page
-//       if (userSearch.ok) {
-//         document.location.replace('/search');
-//       }
-//     });
-//   }
-// };
-
-// make GET request to db
-// const fetchBooks = async (userSearch) => {
-//   const response = await fetch(`/api/book/search/${userSearch}`);
-//   const books = await response.json();
-//   return books;
-// };
-
 searchBtn.addEventListener('click', expand);
-// searchBtn.addEventListener('click', handleSearch);
 
 // Swipers
 var swiper = new Swiper('.books-slider', {

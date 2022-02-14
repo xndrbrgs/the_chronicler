@@ -3,8 +3,9 @@
         <div class="row">
             <div class="col">
                 <img src='{{image_url}}' alt="">
+                <button id="add-btn">Add Book to Your Collection</button>
             </div>
-            <div class="col" id="details">
+            <div class="col" id="details" data-id="{{id}}">
                 <h1>{{title}}</h1>
                 <h2>{{author}}</h2>
                 {{!-- make this display stars instead of a number --}}
@@ -43,4 +44,5 @@
     </div>
 </section>
 
-<script src="./js/chosen-book.js"></script>
+<script src="/js/chosen-book.js"></script>
+<script src="/js/add-book.js"></script>

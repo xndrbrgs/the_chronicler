@@ -83,6 +83,20 @@ router.post('/logout', (req, res) => {
   }
 });
 
+// Add book to user
+router.post('/add', async (req, res) => {
+  try {
+    const userData = await UserBook.create({
+      user_id: req.session.user_id,
+      book_id: req.body.book_id,
+    });
+
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 // Get user by id
 router.get('/:id', async (req, res) => {
   try {

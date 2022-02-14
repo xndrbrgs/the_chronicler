@@ -1,171 +1,46 @@
-    <!-- Header Section  -->
-
-    <header>
-      <nav>
-        <ul class="nav_links">
-          <li><a href="#" class="logo">The Chronicler</a></li>
-          <a class="dashboard" href="#"><button>Dashboard</button></a>
-          <li>Welcome Back, Alex!</li>
-        </ul>
-      </nav>
-      <form id="content" class="hide">
-        <input type="text" name="input" class="input" id="search-input">
-        <button type="reset" class="search" id="search-btn">Search</button>
-      </form>
-      <a class="logout" href="#logout"><button>Logout</button></a>
-    </header>
-
-    <main>
-      <!-- Jumbotron Section  -->
-
-      <section class="home" id="home">
-          <div class="container">
-              <div class="row">
-                  <div class="col">
-
-                    {{#with Book as |book|}}
-                    <img src='{{book.image_url}}' alt="" />
-                  </div>
-                  <div class="col" id="details">
-                    <h1>Title: {{book.title}}</h1>
-                    <h2>By: {{book.author}}</h2>
-                    <h3>Rating: {{book.rating}}</h3>
-                    <h4>Description: {{book.description}}</h4>
-                    <h4>Goodreads Link: {{book.goodreads_url}}</h4>
-                    <p>Genre: {{book.genre}}</p>
-                  </div>
-                  {{/with}}
-                  
-              </div>
-          </div>
+<section class="home" id="home">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img src='{{image_url}}' alt="">
+            </div>
+            <div class="col" id="details">
+                <h1>{{title}}</h1>
+                <h2>{{author}}</h2>
+                {{!-- make this display stars instead of a number --}}
+                <h3>GoodReads Rating: {{rating}}</h3>
+                <h4>{{description}}</h4>
+                <h4><a href="{{goodreads_url}}">View on GoodReads.com!</a></h4>
+                <p>Genre: {{genre}}</p>
+            </div>
         </div>
-      </section>
+    </div>
+</section>
 
-      <!-- Recommended Books Section  -->
+{{!-- recommended books --}}
 
-      <section class="recommended" id="recommended">
-        <h1 class="heading"><span>If you like this book, check these out!</span></h1>
+<section class="recommended" id="recommended">
+    <h1 class="heading"><span>If you like this book, check these out!</span></h1>
 
-        <div class="swiper recommended-slider">
-          <div class="swiper-wrapper">
+    <div class="swiper recommended-slider">
+        <div class="swiper-wrapper">
+            {{#each recommendedBooks as |book|}}
+            
+            {{!-- get books for recommended books --}}
             <div class="swiper-slide box">
-              <div class="image">
-                <img src="./chosen-image/book-1.png" alt="" />
-              </div>
-              <div class="content">
-                <h3 class="new-books">Recommended books</h3>
-              </div>
+                <div class="image">
+                <img src="" alt="" />
+                </div>
+                <div class="content">
+                <h3 class="new-books"><a href="search/{{book.[0]}}">{{book.[0]}}</a></h3>
+                </div>
             </div>
-
-            <div class="swiper-slide box">
-              <div class="image">
-                <img src="./chosen-image/book-1.png" alt="" />
-              </div>
-              <div class="content">
-                <h3 class="new-books">Recommended books</h3>
-              </div>
-            </div>
-
-            <div class="swiper-slide box">
-              <div class="image">
-                <img src="./chosen-image/book-1.png" alt="" />
-              </div>
-              <div class="content">
-                <h3 class="new-books">Recommended books</h3>
-              </div>
-            </div>
-
-            <div class="swiper-slide box">
-              <div class="image">
-                <img src="./chosen-image/book-1.png" alt="" />
-              </div>
-              <div class="content">
-                <h3 class="new-books">Recommended books</h3>
-              </div>
-            </div>
-
-            <div class="swiper-slide box">
-              <div class="image">
-                <img src="./chosen-image/book-1.png" alt="" />
-              </div>
-              <div class="content">
-                <h3 class="new-books">Recommended books</h3>
-              </div>
-            </div>
-
-            <div class="swiper-slide box">
-              <div class="image">
-                <img src="./chosen-image/book-1.png" alt="" />
-              </div>
-              <div class="content">
-                <h3 class="new-books">Recommended books</h3>
-              </div>
-            </div>
-
-            <div class="swiper-slide box">
-              <div class="image">
-                <img src="./chosen-image/book-1.png" alt="" />
-              </div>
-              <div class="content">
-                <h3 class="new-books">Recommended books</h3>
-              </div>
-            </div>
-
-            <div class="swiper-slide box">
-              <div class="image">
-                <img src="./chosen-image/book-1.png" alt="" />
-              </div>
-              <div class="content">
-                <h3 class="new-books">Recommended books</h3>
-              </div>
-            </div>
-
-            <div class="swiper-slide box">
-              <div class="image">
-                <img src="./chosen-image/book-1.png" alt="" />
-              </div>
-              <div class="content">
-                <h3 class="new-books">Recommended books</h3>
-              </div>
-            </div>
-
-            <div class="swiper-slide box">
-              <div class="image">
-                <img src="./chosen-image/book-1.png" alt="" />
-              </div>
-              <div class="content">
-                <h3 class="new-books">Recommended books</h3>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+            {{/each}}
         </div>
-      </section>
 
- <!-- Footer  -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</section>
 
-      <footer>
-        <section class="footer">
-          <div class="footer-text">
-            <h1 class="logo-footer">The Chronicler</h1>
-            <h3>Est. 2022</h3>
-          </div>
-          <div class="git-icons">
-            <a href="https://github.com/xndrbrgs">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="https://github.com/xndrbrgs">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="https://github.com/xndrbrgs">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="https://github.com/xndrbrgs">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-        </section>
-      </footer>
-    </main>
+<script src="./js/chosen-book.js"></script>

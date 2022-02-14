@@ -60,6 +60,7 @@ header {
 .books-list {
   text-align: center;
   color: #283618;
+  height: 100vh;
 }
 
 #dash-title {

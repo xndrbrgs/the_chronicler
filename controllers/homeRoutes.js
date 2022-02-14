@@ -158,12 +158,6 @@ router.get('/user/:id', async (req, res) => {
 // render dashboard page
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
-    // USER INFO
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: {exclude: ['password']},
-    });
-    const user = userData.get({plain: true});
-
     // Find the logged in user based on the session ID + include their associated books
     const userData = await User.findByPk(req.session.user_id, {
       attributes: {exclude: ['password']},

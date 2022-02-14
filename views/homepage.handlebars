@@ -70,7 +70,9 @@
             {{#each recommendedBooks as |book|}}
             <div class='swiper-slide box'>
                 <div class='image'>
-                    <img src='{{book.image_url}}' alt=''/>
+                    <a href="/book/{{book.id}}">
+                        <img src='{{book.image_url}}' alt=''/>
+                    </a>
                 </div>
                 <div class='content'>
                     <h3 class='new-books'>{{book.title}}</h3>

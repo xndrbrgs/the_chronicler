@@ -66,6 +66,7 @@ router.get('/home', async (req, res) => {
   }
 });
 
+// TODO: Use this to fill in dynamic links for chosen book
 // render book by id
 router.get('/book/:id', async (req, res) => {
   try {
@@ -75,10 +76,20 @@ router.get('/book/:id', async (req, res) => {
 
     const book = bookData.get({plain: true});
 
-    res.render('book', {
-      ...book,
-      logged_in: req.session.logged_in,
-    });
+    // res.render('book', {
+    //   ...book,
+    //   logged_in: req.session.logged_in,
+    // });
+
+    // render chosen book page 
+  res.render('chosenbook', {
+    layout: 'chosen.handlebars',
+    ...book,
+    Book,
+    logged_in: req.session.logged_in,
+  });
+
+
   } catch (err) {
     res.status(500).json(err);
   }
@@ -126,5 +137,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
 
 module.exports = router;

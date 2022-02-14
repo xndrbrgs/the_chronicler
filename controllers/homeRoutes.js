@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { defaultValueSchemable } = require('sequelize/types/utils');
 const {Book, User} = require('../models');
 const withAuth = require('../utils/auth');
 const {randomNumber} = require('../utils/helpers');
@@ -119,6 +120,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     const user = userData.get({plain: true});
 
     res.render('dashboard', {
+      layout: 'dash.handlebars',
       ...user,
       logged_in: true,
     });

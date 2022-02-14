@@ -16,15 +16,15 @@
                         <li id="sidebar-buttons" class="list-group-item">
                         <a href='/dashboard' onclick="yourbooks()" id="your-books">Your Books</a>
                         </li>
-                        <li id="sidebar-buttons" class="list-group-item">
-                        <a href='/dashboard' onclick="foryou()" id="for-you">For you</a>
-                        </li>
-                        <li id="sidebar-buttons" class="list-group-item">
+                        {{!-- <li id="sidebar-buttons" class="list-group-item">
+                        <a href='/dashboard/for_you' onclick="foryou()" id="for-you">For you</a>
+                        </li> --}}
+                        {{!-- <li id="sidebar-buttons" class="list-group-item">
                         <a href='/dashboard' onclick="booksread()" id="books-read">Books Read</a>
-                        </li>
-                        <li id="sidebar-buttons" class="list-group-item">
+                        </li> --}}
+                        {{!-- <li id="sidebar-buttons" class="list-group-item">
                         <a href='/dashboard' onclick="currentbooks()" id="current">Currently Reading</a>
-                        </li>
+                        </li> --}}
                       </ul>
                     </div>
                   </div>
@@ -55,8 +55,13 @@
 
           <div class="book-database">
             <h1>All Books Can Show Up Here</h1>
-            <img src="../main-page/image/book-1.png" alt="" />
-            <img src="../main-page/image/book-1.png" alt="" />
+
+            <div class="container">
+                {{#each user.books as |book|}}
+                <a href="/book/{{book.id}}"><img src="{{book.image_url}}" alt=""></a>
+                {{/each}}
+            </div>
+
           </div>
         </section>
       </div>

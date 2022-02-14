@@ -367,10 +367,16 @@ button:hover {
 /* Footer Section */
 
 footer {
+  z-index: 100;
   padding-top: 75px;
   padding-bottom: 65px;
   background-color: var(--kombugreen);
   font-size: 1.4rem;
+  /* position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center; */
 }
 
 .footer-text h1 {

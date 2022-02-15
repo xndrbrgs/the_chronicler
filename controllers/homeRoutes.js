@@ -51,10 +51,15 @@ router.get('/home', async (req, res) => {
     const recommendedIds = [600, 602, 603, 604, 605, 606, 607, 608, 609, 610];
     const recommendedBooks = [];
 
-    recommendedIds.forEach(async (id) => {
+    for (let i = 0; i < recommendedBooks.length; i++) {
       const bookData = await Book.findByPk(id);
       recommendedBooks.push(bookData.dataValues);
-    });
+    }
+
+    // recommendedIds.forEach(async (id) => {
+    //   const bookData = await Book.findByPk(id);
+    //   recommendedBooks.push(bookData.dataValues);
+    // });
 
     res.render('homepage', {
       user,

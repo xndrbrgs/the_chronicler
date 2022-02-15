@@ -16,12 +16,16 @@
 /* Slider */
 
 .home img {
-  height: 45rem;
+  height: 25rem;
   margin: 30px 0;
 }
 
 #book-center {
   text-align: center;
+}
+
+#centered-book {
+  margin-top: 60px;
 }
 
 #image-center {
@@ -36,17 +40,17 @@
 }
 
 #details h1 {
-  font-size: 4.2rem;
+  font-size: 3rem;
   margin-top: 10px;
 }
 
 #details h2 {
-  font-size: 3rem;
+  font-size: 2rem;
   margin-top: 20px;
 }
 
 #details h3 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-top: 20px;
 }
 

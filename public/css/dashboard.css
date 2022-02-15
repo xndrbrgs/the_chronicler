@@ -59,12 +59,12 @@ header {
 
 .books-list {
   color: #283618;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 #dash-title {
   font-size: 4rem;
-  margin: 20px 0;
+  margin: 20px 60px;
 }
 
 .book-database {

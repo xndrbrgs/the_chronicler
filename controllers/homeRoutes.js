@@ -48,14 +48,14 @@ router.get('/home', async (req, res) => {
     }
 
     // RECOMMENDED
-    const recommendedIds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const recommendedIds = [600, 602, 603, 604, 605, 606, 607, 608, 609, 610];
     const recommendedBooks = [];
 
     recommendedIds.forEach(async (id) => {
       const bookData = await Book.findByPk(id);
       recommendedBooks.push(bookData.dataValues);
     });
-    console.log('HERE IS THE BOOK DATA!!!!', recommendedBooks)
+
     res.render('homepage', {
       user,
       randomBooks,

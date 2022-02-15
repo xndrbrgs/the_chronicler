@@ -48,18 +48,13 @@ router.get('/home', async (req, res) => {
     }
 
     // RECOMMENDED
-    const recommendedIds = [600, 602, 603, 604, 605, 606, 607, 608, 609, 610];
+    const recommendedIds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     const recommendedBooks = [];
 
-    for (let i = 0; i < recommendedBooks.length; i++) {
+    recommendedIds.forEach(async (id) => {
       const bookData = await Book.findByPk(id);
       recommendedBooks.push(bookData.dataValues);
-    }
-
-    // recommendedIds.forEach(async (id) => {
-    //   const bookData = await Book.findByPk(id);
-    //   recommendedBooks.push(bookData.dataValues);
-    // });
+    });
 
     res.render('homepage', {
       user,

@@ -27,6 +27,10 @@ router.get('/signup', async (req, res) => {
 // render home page
 router.get('/home', async (req, res) => {
   try {
+    if (!req.session.logged_in) {
+      res.redirect('/login');
+      return;
+    }
     // USER INFO
     const userData = await User.findByPk(req.session.user_id, {
       attributes: {exclude: ['password']},

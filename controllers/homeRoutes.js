@@ -33,6 +33,15 @@ router.get('/home', async (req, res) => {
     });
     const user = userData.get({plain: true});
 
+    // RECOMMENDED
+    const recommendedIds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const recommendedBooks = [];
+
+    recommendedIds.forEach(async (id) => {
+      const bookData = await Book.findByPk(id);
+      recommendedBooks.push(bookData.dataValues);
+    });
+
     // TOP CAROUSEL
     // get number of books in database
     const bookNum = await Book.findAndCountAll();
@@ -48,13 +57,13 @@ router.get('/home', async (req, res) => {
     }
 
     // RECOMMENDED
-    const recommendedIds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    const recommendedBooks = [];
+    // const recommendedIds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    // const recommendedBooks = [];
 
-    recommendedIds.forEach(async (id) => {
-      const bookData = await Book.findByPk(id);
-      recommendedBooks.push(bookData.dataValues);
-    });
+    // recommendedIds.forEach(async (id) => {
+    //   const bookData = await Book.findByPk(id);
+    //   recommendedBooks.push(bookData.dataValues);
+    // });
 
     res.render('homepage', {
       user,

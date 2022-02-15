@@ -15,8 +15,10 @@ const hbs = exphbs.create({helpers});
 
 const sess = {
   secret: 'Super secret secret',
-  // TODO: add cookie information
-  cookie: {},
+  cookie: {
+    // 15 minutes
+    maxAge: 900000,
+  },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
@@ -36,7 +38,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-// ! Be sure this is set to false before merging
 sequelize.sync({force: false}).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });

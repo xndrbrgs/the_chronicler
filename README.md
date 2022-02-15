@@ -30,5 +30,11 @@ The Chronicler is an application that allows users to search through a database 
 ## 🎨 Preview
 ![Landing Page](images/chronicler_landing.png)
 
+![Home Page](images/homepage.png)
+
+![Single Book](images/singlebook.png)'
+
+![Dashboard](images/dashboard.png)
+
 ## 🌳 Table Associations
 ![table relationships](images/chronicler_relationships.png)

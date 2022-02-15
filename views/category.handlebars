@@ -9,7 +9,7 @@
 <!-- Jumbotron Section  -->
 
 <section class="home" id="home">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             {{#each categories as |book|}}
             <div class="col" id="details">
@@ -19,7 +19,7 @@
                 <h1>{{book.title}}</h1>
                 <h2>{{book.author}}</h2>
                 <h3>{{book.rating}}/5</h3>
-                <h4><a href="{{book.goodreads_url}}" target="_blank">View on GoodReads.com!</a></h4>
+                <h3><a href="{{book.goodreads_url}}" target="_blank">View on GoodReads.com!</a></h3>
             </div>
             {{/each}}
         </div>

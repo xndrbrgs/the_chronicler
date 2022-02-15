@@ -1,7 +1,7 @@
 /* Books Section */
 
 .home img {
-  height: 20rem;
+  height: 10rem;
   margin: 20px 0;
 }
 
@@ -16,12 +16,13 @@
   margin: 40px 30px;
   color: #283618;
   text-align: center;
+  /* align-items: flex-start; */
 }
 
 #details h1,
 h2 h3,
 h4 {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 #details h1 {

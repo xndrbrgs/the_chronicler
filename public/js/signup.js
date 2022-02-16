@@ -1,5 +1,5 @@
 // signup logic
-async function signupFormHandler(event) {
+const signupFormHandler = async (event) => {
   event.preventDefault();
 
   const name = document.querySelector('#name-signup').value.trim();
@@ -21,10 +21,8 @@ async function signupFormHandler(event) {
       alert(response.statusText);
     }
   }
-}
+};
 
-const signupBtn = document.querySelector('#signup-btn');
-signupBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  signupFormHandler();
-});
+document
+  .querySelector('.sign-up-htm')
+  .addEventListener('submit', signupFormHandler);

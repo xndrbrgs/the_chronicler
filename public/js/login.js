@@ -1,5 +1,5 @@
 // login logic
-async function loginFormHandler(event) {
+const loginFormHandler = async (event) => {
   event.preventDefault();
 
   const email = document.querySelector('#email-login').value.trim();
@@ -21,8 +21,8 @@ async function loginFormHandler(event) {
       alert('Failed to log in');
     }
   }
-}
+};
 
 document
-  .querySelector('#sign-in-htm')
+  .querySelector('.sign-in-htm')
   .addEventListener('submit', loginFormHandler);

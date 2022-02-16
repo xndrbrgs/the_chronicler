@@ -13,6 +13,8 @@ const loginFormHandler = async (event) => {
       headers: {'Content-Type': 'application/json'},
     });
 
+    console.log(response);
+
     // good response sends user to homepage
     if (response.ok) {
       document.location.replace('/home');
